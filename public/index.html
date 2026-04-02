@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live IDS Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h1>🛡️ Network Security Dashboard</h1>
+
+<!-- 🔥 Controls -->
+<div style="margin-bottom: 20px;">
+    <button onclick="startLiveMonitoring()">Start Live Monitoring</button>
+
+    <input type="file" id="fileInput">
+    <button onclick="uploadFile()">Upload CSV</button>
+</div>
+
+
+<!-- 📊 Cards -->
+<div class="cards">
+    <div class="card">
+        <h3>Top IP</h3>
+        <p id="topIP">-</p>
+    </div>
+
+    <div class="card alert">
+        <h3>Alerts</h3>
+        <p id="alertCount">0</p>
+    </div>
+
+    <div class="card">
+        <h3>Total Protocols</h3>
+        <p id="protocolCount">0</p>
+    </div>
+</div>
+
+<!-- 📈 Chart -->
+<h2>📊 Protocol Usage</h2>
+<canvas id="protocolChart"></canvas>
+
+<!-- 🚨 Alerts -->
+<h2>🚨 Alerts</h2>
+<div id="alerts"></div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
